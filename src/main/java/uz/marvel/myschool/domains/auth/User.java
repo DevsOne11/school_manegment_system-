@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @ToString
 @Builder
-@Entity
+@Entity(name = "auth_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

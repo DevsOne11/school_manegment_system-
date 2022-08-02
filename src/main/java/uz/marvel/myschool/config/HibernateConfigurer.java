@@ -34,9 +34,9 @@ public class HibernateConfigurer {
                 Properties settings = new Properties();
 
                 settings.put(Environment.DRIVER, "org.postgresql.Driver");
-                settings.put(Environment.URL, "jdbc:postgresql://localhost:5433/myschool");
+                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/myschool");
                 settings.put(Environment.USER, "postgres");
-                settings.put(Environment.PASS, "admin");
+                settings.put(Environment.PASS, "12345");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.HBM2DDL_AUTO, "update");
                 settings.put(Environment.FORMAT_SQL, "true");
