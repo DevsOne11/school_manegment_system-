@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Objects;
 
 @WebServlet("/auth/login")
 public class LoginServlet extends HttpServlet {
@@ -19,6 +20,9 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        req.getSession().setAttribute("sessionid", 123);
+        String redirectPath = (String) req.getSession().getAttribute("s_path");
+
+        resp.sendRedirect(Objects.isNull(redirectPath) ? "/" : redirectPath);
     }
 }
