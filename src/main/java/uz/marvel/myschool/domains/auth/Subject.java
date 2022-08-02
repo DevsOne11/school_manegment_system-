@@ -24,6 +24,6 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Long description;
-    private Long grade;
+    private String description;
+    private Grade grade;
 }
