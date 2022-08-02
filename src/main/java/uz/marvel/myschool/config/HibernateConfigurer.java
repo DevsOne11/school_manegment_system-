@@ -34,9 +34,9 @@ public class HibernateConfigurer {
                 Properties settings = new Properties();
 
                 settings.put(Environment.DRIVER, "org.postgresql.Driver");
-                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/myschool");
+                settings.put(Environment.URL, "jdbc:postgresql://localhost:5433/myschool");
                 settings.put(Environment.USER, "postgres");
-                settings.put(Environment.PASS, "12345");
+                settings.put(Environment.PASS, "admin");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.HBM2DDL_AUTO, "update");
                 settings.put(Environment.FORMAT_SQL, "true");
@@ -61,12 +61,7 @@ public class HibernateConfigurer {
 
                 // Create MetadataSources
                 MetadataSources sources = new MetadataSources(registry);
-//
-                Reflections reflections = new Reflections("uz.marvel.myschool.domains");
-                reflections.get(SubTypes.of(TypesAnnotated.with(Entity.class)).asClass())
-                        .forEach(sources::addAnnotatedClass);
 
-                // Create Metadata
                 Metadata metadata = sources.getMetadataBuilder().build();
 
                 // Create SessionFactory
