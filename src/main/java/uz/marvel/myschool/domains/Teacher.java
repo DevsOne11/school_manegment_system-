@@ -33,5 +33,4 @@ public class Teacher {
 
     private List<Subject> subjects;
 
-
 }
