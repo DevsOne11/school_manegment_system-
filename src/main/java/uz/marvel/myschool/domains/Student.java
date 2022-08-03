@@ -1,10 +1,9 @@
 package uz.marvel.myschool.domains;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,5 +21,15 @@ public class Student {
     private String fullname;
     private Long grade_id;
     private Long tutor_id;
+    @ManyToMany
+    @JoinTable(
+            name="XYZ",
+            joinColumns=
+            @JoinColumn(name="student_id", referencedColumnName="ID"),
+            inverseJoinColumns=
+            @JoinColumn(name="parent_id", referencedColumnName="ID")
+    )
+
+    private List<Parents> parents;
 
 }

@@ -1,10 +1,9 @@
 package uz.marvel.myschool.domains;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,4 +22,16 @@ public class Teacher {
 
     private Long user_id;
     private String specialization;
+    @ManyToMany
+    @JoinTable(
+            name="Teacher-subjects",
+            joinColumns=
+            @JoinColumn(name="teacher_id", referencedColumnName="ID"),
+            inverseJoinColumns=
+            @JoinColumn(name="subject_id", referencedColumnName="ID")
+    )
+
+    private List<Subject> subjects;
+
+
 }
