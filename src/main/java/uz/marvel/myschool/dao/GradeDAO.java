@@ -1,6 +1,6 @@
 package uz.marvel.myschool.dao;
 
-import uz.marvel.myschool.domains.auth.Grade;
+import uz.marvel.myschool.domains.Grade;
 
 import java.util.List;
 
@@ -11,22 +11,22 @@ import java.util.List;
  */
 public class GradeDAO extends Dao<Grade,Long> {
     @Override
-    Grade create(Grade entity) {
+    public Grade create(Grade entity) {
         return super.create(entity);
     }
 
     @Override
-    void delete(Long id) {
+    public void delete(Long id) {
         super.delete(id);
     }
 
     @Override
-    List<Grade> findAll() {
+    public List<Grade> findAll() {
         return super.findAll();
     }
 
     @Override
-    Grade findOne(Long id) {
+    public Grade findOne(Long id) {
         return super.findOne(id);
     }
 }

@@ -1,6 +1,6 @@
 package uz.marvel.myschool.dao;
 
-import uz.marvel.myschool.domains.auth.Student;
+import uz.marvel.myschool.domains.Student;
 
 import java.util.List;
 
@@ -11,22 +11,22 @@ import java.util.List;
  */
 public class StudentDAO extends Dao<Student,Long> {
     @Override
-    Student create(Student entity) {
+    public Student create(Student entity) {
         return super.create(entity);
     }
 
     @Override
-    void delete(Long id) {
+    public void delete(Long id) {
         super.delete(id);
     }
 
     @Override
-    List<Student> findAll() {
+    public List<Student> findAll() {
         return super.findAll();
     }
 
     @Override
-    Student findOne(Long id) {
+    public Student findOne(Long id) {
         return super.findOne(id);
     }
 }

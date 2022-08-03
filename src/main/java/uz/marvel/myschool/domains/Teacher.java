@@ -1,4 +1,4 @@
-package uz.marvel.myschool.domains.auth;
+package uz.marvel.myschool.domains;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

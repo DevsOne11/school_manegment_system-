@@ -1,4 +1,4 @@
-package uz.marvel.myschool.domains.auth;
+package uz.marvel.myschool.domains;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,6 +6,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+
+
+/**
+ * @author Shoniyazova Matlyuba
+ * @project school_manegment_system-
+ * @since 02/08/22  16:27 (Tuesday)
+ */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,15 +20,10 @@ import lombok.*;
 @ToString
 @Builder
 @Entity
-
-public class Grade {
-
+public class Parents {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
-    private String name;
-    private int year;
-    private int active_year;
-    private Status status;
+    private String fullname;
+    private Long user_id;
 }

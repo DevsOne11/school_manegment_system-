@@ -1,4 +1,4 @@
-package uz.marvel.myschool.domains.auth;
+package uz.marvel.myschool.domains;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,24 +6,23 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.time.LocalDateTime;
 
-
-/**
- * @author Shoniyazova Matlyuba
- * @project school_manegment_system-
- * @since 02/08/22  16:27 (Tuesday)
- */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Builder
-@Entity
-public class Parents {
+@Entity(name = "auth_user")
+public class AuthUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fullname;
-    private Long user_id;
+    private String username;
+    private String password;
+    private LocalDateTime created_at;
+    private Position position;
+    private Status status;
 }
+

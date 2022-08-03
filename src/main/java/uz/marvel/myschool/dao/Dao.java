@@ -10,7 +10,7 @@ import java.util.Objects;
 public abstract class Dao<T, ID> {
     private Class<T> clazz;
 
-    T create(T entity) {
+    public T create(T entity) {
         SessionFactory sessionFactory = HibernateConfigurer.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
@@ -19,7 +19,7 @@ public abstract class Dao<T, ID> {
         return entity;
     }
 
-    void delete(Long id) {
+    public void delete(Long id) {
         SessionFactory sessionFactory = HibernateConfigurer.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
@@ -29,14 +29,14 @@ public abstract class Dao<T, ID> {
         session.getTransaction().commit();
     }
 
-    List<T> findAll() {
+    public List<T> findAll() {
         SessionFactory sessionFactory = HibernateConfigurer.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
         return session.createQuery("select a from " + clazz + " a order by a.id desc ", clazz).getResultList();
     }
 
-    T findOne(Long id){
+    public T findOne(Long id){
         return null;
     }
 }
