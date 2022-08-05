@@ -3,7 +3,7 @@ package uz.marvel.myschool.service;
 import lombok.NonNull;
 import uz.marvel.myschool.dao.UserDAO;
 import uz.marvel.myschool.domains.AuthUser;
-import uz.marvel.myschool.dto.RegisterDTO;
+import uz.marvel.myschool.dto.auth.RegisterDTO;
 import uz.marvel.myschool.exceptions.BadRequestException;
 import uz.marvel.myschool.util.Utils;
 

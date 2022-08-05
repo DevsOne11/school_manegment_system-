@@ -5,7 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
-
+import uz.marvel.myschool.dto.GradeDTO;
+import uz.marvel.myschool.dto.ParentsDTO;
 
 
 /**
@@ -26,4 +27,11 @@ public class Parents {
     private Long id;
     private String fullname;
     private Long user_id;
+
+    public static Parents toDomain(ParentsDTO dto) {
+        return Parents.builder()
+                .fullname(dto.getFullname())
+                .user_id(dto.getUser_id())
+                .build();
+    }
 }

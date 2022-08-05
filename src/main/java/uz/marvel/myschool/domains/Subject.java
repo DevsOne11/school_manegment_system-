@@ -2,6 +2,8 @@ package uz.marvel.myschool.domains;
 
 import jakarta.persistence.*;
 import lombok.*;
+import uz.marvel.myschool.dto.ParentsDTO;
+import uz.marvel.myschool.dto.SubjectDTO;
 
 import java.util.List;
 
@@ -21,7 +23,15 @@ public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
     private String description;
+
+    public static Subject toDomain(SubjectDTO dto) {
+        return Subject.builder()
+                .name(dto.getName())
+                .description(dto.getDescription())
+                .build();
+    }
 
 }

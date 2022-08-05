@@ -1,4 +1,4 @@
-package uz.marvel.myschool.dto;
+package uz.marvel.myschool.dto.auth;
 
 import lombok.*;
 import uz.marvel.myschool.domains.AuthUser;

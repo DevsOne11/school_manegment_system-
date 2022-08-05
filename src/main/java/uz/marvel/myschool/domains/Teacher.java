@@ -2,6 +2,8 @@ package uz.marvel.myschool.domains;
 
 import jakarta.persistence.*;
 import lombok.*;
+import uz.marvel.myschool.dto.ParentsDTO;
+import uz.marvel.myschool.dto.TeacherDTO;
 
 import java.util.List;
 
@@ -32,5 +34,13 @@ public class Teacher {
     )
 
     private List<Subject> subjects;
+
+    public static Teacher toDomain(TeacherDTO dto) {
+        return Teacher.builder()
+                .fullname(dto.getFullname())
+                .user_id(Long.valueOf(dto.getUser_id()))
+                .specialization(dto.getSpecialization())
+                .build();
+    }
 
 }
